@@ -17,9 +17,11 @@ namespace JogoDaMemoria
         Image[] img = new Image[9];
         List<string> lista = new List<string>();
         int[] tags = new int[2];
+        string nick_name;
 
-        public Form1()
+        public Form1(string nick)
         {
+            nick_name = nick;
             InitializeComponent();
             Inicio();
         }
@@ -80,11 +82,21 @@ namespace JogoDaMemoria
             } else if (cliques == 2)
             {
                 movimentos++;
-                lblMovimentos.Text = "Movimentos " + movimentos.ToString();
+                lblMovimentos.Text = "MOVIMENTOS: " + movimentos.ToString();
                 tags[1] = int.Parse(String.Format("{0}", pic.Tag));
                 parEncontrado = ChecagemPares();
                 Desvirar(parEncontrado);
             }
+
+        }
+
+        private void lblMovimentos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 
@@ -128,7 +140,7 @@ namespace JogoDaMemoria
         {
             if (cartasEncontradas == img.Length * 2) 
             {
-                MessageBox.Show("Parabéns! Você terminou o jogo com " + movimentos.ToString() + " movimentos");
+                MessageBox.Show("Parabéns " + nick_name + "! Você terminou o jogo com " + movimentos.ToString() + " movimentos");
                 DialogResult msg = MessageBox.Show("Deseja continuar jogando?", "Caixa de Pergunta", MessageBoxButtons.YesNo);
                 if (msg == DialogResult.Yes)
                 {
