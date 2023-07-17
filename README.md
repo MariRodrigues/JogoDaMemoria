@@ -1,5 +1,5 @@
 # JogoDaMemoria - Três Espiãs Demais
-Jogo da memória feito em C# 
+Jogo da memória feito em C# - Três Espiãs Demais
 
 ![image](https://github.com/MariRodrigues/JogoDaMemoria/assets/46384658/273cc2ab-137e-4b50-8008-c6bea1a64a19)
 
